@@ -9,11 +9,19 @@ from werkzeug.utils import secure_filename
 
 # ─── App Configuration ────────────────────────────────────────────────────────
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'hdfc-bank-secret-2024-secure-key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bank.db'
+app.config['SECRET_KEY'] = 'nexbank-loan-prediction-secret-2024'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
+
+# ── Vercel: filesystem is read-only except /tmp ───────────────────────────────
+IS_VERCEL = os.environ.get('VERCEL') == '1'
+
+if IS_VERCEL:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/bank.db'
+    app.config['UPLOAD_FOLDER'] = '/tmp/uploads'
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bank.db'
+    app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 
 ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg'}
 
@@ -626,7 +634,9 @@ def validate_account():
         return jsonify({'valid': False, 'error': 'Account not found in NexaBank'})
 
 
+# ── Create DB tables on startup (module-level for Vercel serverless) ──────────
+with app.app_context():
+    db.create_all()
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True, port=5000)
