@@ -16,3 +16,5 @@ static/uploads/*
 !static/uploads/.gitkeep
 *.log
 .vercel/
+
+.vercel
