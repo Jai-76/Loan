@@ -2,7 +2,7 @@ import os, uuid, random, hashlib
 from datetime import datetime
 from flask import (Flask, render_template, request, redirect,
                    url_for, session, jsonify, flash)
-from werkzeug.utils import secure_filename
+from werkzeug.utils import  secure_filename
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'loanpro_2024_xK9mP3qR')
