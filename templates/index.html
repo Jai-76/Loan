@@ -6,12 +6,12 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="fade">
-      <div class="pill">Fintech underwriting · Instant decisions</div>
-      <h1 class="hero-title">Know your loan outcome before you apply.</h1>
-      <p class="hero-sub">Loan Prediction gives a fast eligibility verdict for Car, Home, Personal, Education & Business loans with a clear score, CIBIL check, and EMI view.</p>
+      <div class="pill">Banking style underwriting</div>
+      <h1 class="hero-title">Simple loan decisions with bank-grade clarity.</h1>
+      <p class="hero-sub">A clean, trustworthy loan experience for Car, Home, Personal, Education, and Business applications with score, eligibility, and EMI insights.</p>
       <div class="hero-btns">
-        <a href="{{ url_for('loan_start') }}" class="btn btn-primary btn-lg">Start Application</a>
-        <a href="{{ url_for('demo_login') }}" class="btn btn-ghost btn-lg">Try Demo</a>
+        <a href="{{ url_for('loan_start') }}" class="btn btn-primary btn-lg">Apply now</a>
+        <a href="{{ url_for('demo_login') }}" class="btn btn-ghost btn-lg">View demo</a>
       </div>
       <div class="hero-stats">
         <div class="hs"><strong data-count="50000">0</strong><span>Loans Processed</span></div>
@@ -22,7 +22,7 @@
     <div class="hero-card-wrap">
       <div class="hero-card">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-          <span style="font-size:.82rem;color:var(--txt3);font-weight:700;letter-spacing:.08em;text-transform:uppercase">Loan Eligibility</span>
+          <span style="font-size:.82rem;color:var(--txt3);font-weight:700;letter-spacing:.08em;text-transform:uppercase">Loan Snapshot</span>
           <span class="badge b-green">● Live</span>
         </div>
         <div class="loan-chips">
@@ -45,7 +45,7 @@
   <div class="container">
     <div class="sec-title ctr">
       <h2>How it works</h2>
-      <p>A simple workflow from application to verdict.</p>
+      <p>Designed to feel like a clear banking journey, not a flashy demo.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px">
       {% for num,icon,title,desc in [
@@ -71,7 +71,7 @@
   <div class="container">
     <div class="sec-title ctr">
       <h2>Choose your loan</h2>
-      <p>Designed to cover the most common borrowing needs.</p>
+      <p>Quick entry points for the most common borrowing needs.</p>
     </div>
     <div class="lt-grid">
       {% for ic,title,desc,t in [
@@ -96,7 +96,7 @@
 <!-- FEATURES -->
 <section class="sec sec-alt">
   <div class="container">
-    <div class="sec-title ctr"><h2>Why people use Loan Prediction</h2><p>Fast, readable, and easier to trust.</p></div>
+    <div class="sec-title ctr"><h2>Why people use Loan Prediction</h2><p>Trust-first design with clear outcomes.</p></div>
     <div class="features-grid">
       {% for c,ic,title,desc in [
         ('#4f46e5','🤖','AI Prediction Engine','20+ data points analysed in seconds for accurate eligibility.'),
