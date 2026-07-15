@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>{% block title %}LoanPro AI{% endblock %}</title>
+  <title>{% block title %}Loan Prediction{% endblock %}</title>
   <meta name="description" content="AI-powered loan eligibility prediction. Apply for Car, Home, Personal, Education & Business loans instantly."/>
   <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>"/>
@@ -14,7 +14,7 @@
 <nav class="navbar" id="nav">
   <div class="nav-inner">
     <a href="{{ url_for('index') }}" class="brand">
-      <span class="brand-icon">💳</span> LoanPro <em>AI</em>
+      <span class="brand-icon">💳</span> Loan <em>Prediction</em>
     </a>
     <div class="nav-mid">
       {% if session.get('user') %}
@@ -72,7 +72,7 @@
 <footer class="footer">
   <div class="footer-in">
     <div class="footer-brand">
-      <a href="{{ url_for('index') }}" class="brand"><span class="brand-icon">💳</span> LoanPro <em>AI</em></a>
+      <a href="{{ url_for('index') }}" class="brand"><span class="brand-icon">💳</span> Loan <em>Prediction</em></a>
       <p class="mt8">AI-powered loan predictions at your fingertips.</p>
     </div>
     <div class="footer-links">
@@ -92,7 +92,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-bot"><p>© 2024 LoanPro AI · For educational/demo purposes only.</p></div>
+  <div class="footer-bot"><p>© 2024 Loan Prediction · For educational/demo purposes only.</p></div>
 </footer>
 
 <script src="{{ url_for('static',filename='js/main.js') }}"></script>

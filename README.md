@@ -1,4 +1,4 @@
-# LoanPro AI 💳
+# Loan Prediction 💳
 
 > **AI-powered Loan Eligibility Prediction App** built with Flask, Python, and a premium dark UI.
 
