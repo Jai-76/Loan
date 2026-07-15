@@ -26,12 +26,12 @@
         Unfortunately, your profile doesn't meet the criteria. See suggestions below.
       {% endif %}
     </p>
-    <p style="font-size:.83rem;color:var(--text3)">Application ID: <strong style="color:#fff">{{ app.id }}</strong> &nbsp;·&nbsp; {{ app.date }}</p>
+    <p style="font-size:.83rem;color:var(--txt3)">Application ID: <strong style="color:var(--ph)">{{ app.id }}</strong> &nbsp;·&nbsp; {{ app.date }}</p>
   </div>
 
   <!-- Score Gauge -->
   <div class="card mb-24" style="text-align:center;padding:36px">
-    <h3 style="color:#fff;margin-bottom:24px">AI Eligibility Score</h3>
+    <h3 style="color:var(--txt);margin-bottom:24px">AI Eligibility Score</h3>
     <div class="gauge-wrap" id="result-score-val" data-score="{{ result.score }}">
       <svg width="200" height="200" viewBox="0 0 200 200">
         <defs>
@@ -50,7 +50,7 @@
                 style="transform-origin:center;transform:rotate(-90deg)"/>
       </svg>
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
-        <span style="font-size:2.8rem;font-weight:900;color:#fff">{{ result.score }}</span>
+        <span style="font-size:2.8rem;font-weight:900;color:var(--txt)">{{ result.score }}</span>
         <span style="font-size:.78rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em">out of 100</span>
       </div>
     </div>
@@ -60,7 +60,7 @@
   <div class="result-grid mb-24">
     <div class="result-item">
       <span>Loan Amount</span>
-      <strong>₹{{ '{:,.0f}'.format(app.amount) }}</strong>
+      <strong style="color:var(--ph)">₹{{ '{:,.0f}'.format(app.amount) }}</strong>
     </div>
     <div class="result-item">
       <span>Monthly EMI</span>
@@ -68,11 +68,11 @@
     </div>
     <div class="result-item">
       <span>Interest Rate</span>
-      <strong>{{ result.interest_rate }}% p.a.</strong>
+      <strong style="color:var(--ph)">{{ result.interest_rate }}% p.a.</strong>
     </div>
     <div class="result-item">
       <span>Total Payable</span>
-      <strong>₹{{ '{:,.0f}'.format(result.total_payable) }}</strong>
+      <strong style="color:var(--ph)">₹{{ '{:,.0f}'.format(result.total_payable) }}</strong>
     </div>
     <div class="result-item">
       <span>Total Interest</span>
@@ -80,7 +80,7 @@
     </div>
     <div class="result-item">
       <span>Loan Term</span>
-      <strong>{{ app.term }} months</strong>
+      <strong style="color:var(--ph)">{{ app.term }} months</strong>
     </div>
   </div>
 
@@ -110,7 +110,7 @@
 
   <!-- Next Steps -->
   <div class="card mb-24">
-    <h4 style="color:#fff;margin-bottom:16px">🚀 Next Steps</h4>
+    <h4 style="color:var(--txt);margin-bottom:16px">🚀 Next Steps</h4>
     {% if result.status == 'APPROVED' %}
     <ol style="list-style:none;display:flex;flex-direction:column;gap:10px">
       {% for step in ['Upload required documents (PAN, Aadhaar, Salary Slip)','Book appointment with the nearest branch','Sign loan agreement digitally','Receive funds in your account within 3-5 business days'] %}
