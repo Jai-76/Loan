@@ -33,7 +33,7 @@
       {% endif %}
     </p>
     <p style="font-size:.8rem;color:var(--txt3)">
-      Application ID: <strong style="color:#fff">{{ app.id }}</strong> &nbsp;·&nbsp; {{ app.date }}
+      Application ID: <strong style="color:var(--ph)">{{ app.id }}</strong> &nbsp;·&nbsp; {{ app.date }}
     </p>
   </div>
 
@@ -43,7 +43,7 @@
     <div>
       <!-- Gauge -->
       <div class="card txt-c mb16">
-        <h4 style="color:#fff;margin-bottom:16px">AI Eligibility Score</h4>
+        <h4 style="color:var(--txt);margin-bottom:16px">AI Eligibility Score</h4>
         <div class="gauge-wrap">
           <svg width="190" height="190" viewBox="0 0 190 190">
             <defs>
@@ -62,7 +62,7 @@
           </svg>
           <div class="gauge-txt">
             <div id="result-val" data-score="{{ res.score }}"></div>
-            <strong style="font-size:2.5rem;font-weight:900;color:#fff;line-height:1">{{ res.score }}</strong>
+            <strong style="font-size:2.5rem;font-weight:900;color:#0059a6;line-height:1">{{ res.score }}</strong>
             <span style="font-size:.72rem;color:var(--txt3);text-transform:uppercase">out of 100</span>
           </div>
         </div>
@@ -71,12 +71,12 @@
       <!-- Loan details -->
       <div class="res-grid">
         {% for lbl,val,color in [
-          ('Loan Amount', '₹{:,.0f}'.format(app.amount), '#fff'),
+          ('Loan Amount', '₹{:,.0f}'.format(app.amount), '#0059a6'),
           ('Monthly EMI', '₹{:,.0f}'.format(res.emi), 'var(--ph)'),
-          ('Interest Rate', '{}% p.a.'.format(res.rate), '#fff'),
-          ('Total Payable', '₹{:,.0f}'.format(res.total), '#fff'),
+          ('Interest Rate', '{}% p.a.'.format(res.rate), '#0059a6'),
+          ('Total Payable', '₹{:,.0f}'.format(res.total), '#0059a6'),
           ('Total Interest', '₹{:,.0f}'.format(res.interest), 'var(--orange)'),
-          ('Term', '{} months'.format(app.term), '#fff'),
+          ('Term', '{} months'.format(app.term), '#0059a6'),
         ] %}
         <div class="res-item"><span>{{ lbl }}</span><strong style="color:{{ color }}">{{ val }}</strong></div>
         {% endfor %}
@@ -105,7 +105,7 @@
 
       <!-- Next Steps -->
       <div class="card">
-        <h4 style="color:#fff;margin-bottom:14px">🚀 Next Steps</h4>
+        <h4 style="color:var(--txt);margin-bottom:14px">🚀 Next Steps</h4>
         {% if res.status == 'APPROVED' %}
         {% for s in ['Upload KYC & income documents','Visit nearest branch or book online appointment','Sign loan agreement digitally','Funds disbursed in 3–5 business days'] %}
         <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:.84rem;color:var(--txt2)">
